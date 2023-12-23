@@ -10,6 +10,8 @@ import (
 	"syscall"
 )
 
+var build = "develop"
+
 func main() {
 	// initialize logger
 	log, err := logger.New("SALES-API")
@@ -31,7 +33,7 @@ func main() {
 func run(log *zap.SugaredLogger) error {
 
 	// GOMAXPROCS
-	log.Infow("startup", "GOMAXPROCS", runtime.GOMAXPROCS(0))
+	log.Infow("startup", "GOMAXPROCS", runtime.GOMAXPROCS(0), "BUILD", build)
 
 	// ----------------------------------------------------------------------------------
 
